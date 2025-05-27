@@ -1,0 +1,179 @@
+@font-face {
+    font-family: "Poppins-regular";
+    src: url(/assets/fonts/Poppins-Regular.ttf);
+}
+
+@font-face {
+    font-family: "Poppins-light";
+    src: url(/assets/fonts/Poppins-Light.ttf);
+}
+
+@font-face {
+    font-family: "Poppins-medium";
+    src: url(/assets/fonts/Poppins-Medium.ttf);
+}
+
+:root {
+    --font: "Poppins-regular";
+    --font-1: "Poppins-light";
+    --font-2: "Poppins-medium";
+
+    --enemy: '';
+}
+
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    interpolate-size: allow-keywords;
+    -webkit-user-drag: none;
+    user-select: none;
+}
+
+body {
+    background-color: white;
+    font-family: var(--font);
+    height: 100vh;
+    overflow: hidden;
+}
+
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #6f00ff;
+    width: 100%;
+    padding: 10px 15px;
+}
+
+.vigame-wrapper {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.vigame p {
+    font-family: var(--font-2);
+    font-size: 1.5rem;
+}
+
+.container {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    place-content: center;
+}
+
+.knight-game-wrapper {
+    position: relative;
+}
+
+.knight-game-wrapper .health-bar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin: 10px;
+    padding: 10px;
+    display: flex;
+    gap: 5px;
+    align-items: center;
+}
+
+.knight-game-wrapper .player-health,
+.knight-game-wrapper .enemy-health {
+    background-color: #ff3300;
+    height: 20px;
+    width: 100%;
+    outline: 5px solid #ffffff;
+}
+
+.knight-game-wrapper .player-health {
+    border-radius: 5px 0 0 5px;
+}
+
+.knight-game-wrapper .enemy-health {
+    border-radius: 0 5px 5px 0;
+}
+
+.knight-game-wrapper .player-health {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.knight-game-wrapper .enemy-health {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.knight-game-wrapper .time {
+    width: 80px;
+    height: 50px;
+    background-color: #983feb;
+    flex-shrink: 0;
+    display: grid;
+    border-radius: 5px;
+    place-content: center;
+    color: black;
+    font-family: var(--font-2);    
+    font-size: 1.5rem;
+    color: white;
+    outline: 5px solid #ffffff;
+}
+
+.knight-game-wrapper .player-health div::after {
+    content: 'Player 1';
+    position: absolute;
+    left: 15px;
+    bottom: -10px;
+    color: white;
+}
+
+.knight-game-wrapper .enemy-health div::after {
+    content: var(--enemy);
+    position: absolute;
+    right: 15px;
+    bottom: -10px;
+    color: white;
+}
+
+.knight-game-wrapper .player-health div,
+.knight-game-wrapper .enemy-health div {
+  height: 100%;
+  width: 100%;
+  background-color: #10f087;
+  transition: .5s ease-out;
+}
+
+.knight-game-wrapper .game-result {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: grid;
+  place-content: center;
+  font-family: var(--font-2);
+  font-weight: bold;
+  font-size: 5rem;
+  color: white;
+  scale: 0;
+  transition: scale 1s ease-in-out;
+}
+
+.knight-game-wrapper .game-result.appear {
+  scale: 1;
+}
+
+.knight-game {
+    border-radius: 10px;
+    width: 100%;
+    transition: 1s;
+}
+
+.container .info {
+    display: flex;
+    justify-content: space-between;
+}

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="/css/main.css">
+	<title>Vigame</title>
+</head>
+
+<body>
+	<div class="container">
+		<div class="knight-game-wrapper">
+			<div class="health-bar">
+				<div class="player-health">
+					<div></div>
+				</div>
+				<div class="time">
+					60
+				</div>
+				<div class="enemy-health">
+					<div></div>
+				</div>
+			</div>
+			<div class="game-result"></div>
+			<canvas class="knight-game"></canvas>
+		</div>
+		<div class="info">
+			<div>
+				<p>Fullscreen: F1</p>
+				<p>Music toggle: F2</p>
+				<p>Play Again: F3</p>
+			</div>
+			<ul>
+				<h3>Player 1 controls</h3>
+				<li>Movements: A, W , D</li>
+				<li>Attack: S, Space</li>
+			</ul>
+			<ul>
+				<h3>Player 2 controls</h3>
+				<li>Movements: ← ,↑, →</li>
+				<li>Attack: ↓, /</li>
+			</ul>
+		</div>
+	</div>
+
+	<script src="js/utils.js"></script>
+	<script src="js/classes.js"></script>
+	<script src="index.js"></script>
+	<script src="js/menu.js"></script>
+</body>
+
+</html>
